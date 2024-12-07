@@ -14,10 +14,8 @@ app.set('view engine','ejs');
 
 app.use('/',require('./server/routes/main'));
 
-// Correcting the route to use '/'
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+
+
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
