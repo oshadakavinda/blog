@@ -9,12 +9,13 @@
     <script type="text/javascript" defer src="/js/script.js"></script>
 </head>
 <body>
-    <div class="cotainer">
-        <%- include('../partials/header.ejs') %>
-        <%- body %>
-        <%- include('../partials/footer.ejs') %>
-
-    </div>
-    
+    <%- include('../partials/search.ejs')  %>
+  <div class="container">
+    <%- include('../partials/header.ejs')  %>
+    <main class="main">
+      <%- body %>
+    </main>
+    <%- include('../partials/footer.ejs')  %>
+  </div>  
 </body>
 </html>
