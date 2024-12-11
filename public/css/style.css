@@ -243,12 +243,15 @@ img {
 }
 
 .article-ul:hover li {
-  filter: blur(3px);
-}
-
-.article-ul:hover li:hover {
-  filter: none;
-}
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .article-ul:hover li:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
 
 
 .article {
