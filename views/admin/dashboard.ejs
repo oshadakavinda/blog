@@ -1,1 +1,41 @@
-dashboard
+<!-- Container for the admin section title -->
+<div class="admin-title">
+    <!-- Heading for the admin posts section -->
+    <h2>Posts</h2>
+    
+    <!-- Link to the "Add New Post" page -->
+    <a href="/add-post" class="button">+ Add New</a>
+  </div>
+  
+  <!-- Unordered list to display posts in the admin section -->
+  <ul class="admin-posts">
+  
+    <!-- Loop through the `data` array (contains posts) and render each post -->
+    <% data.forEach(post => { %>
+      
+      <!-- List item for a single post -->
+      <li>
+        <!-- Link to the post detail page, dynamically inserting the post's ID -->
+        <a href="/post/<%= post._id %>">
+          <%= post.title %> &nearr; <!-- Display the post's title followed by an arrow symbol -->
+        </a>
+        
+        <!-- Controls for editing and deleting a post -->
+        <div class="admin-post-controls">
+          
+          <!-- Link to the "Edit Post" page for this specific post -->
+          <a href="/edit-post/<%= post._id %>" class="btn">Edit</a>
+  
+          <!-- Form for deleting a post -->
+          <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+            <!-- Submit button for deleting the post -->
+            <input type="submit" value="Delete" class="btn-delete btn">
+          </form>
+  
+        </div>
+      </li>
+  
+    <% }) %> <!-- End of the loop -->
+    
+  </ul>
+  
